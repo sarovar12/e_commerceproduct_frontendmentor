@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Kumbh+Sans&family=Public+Sans:wght@300;400&family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Product | E-commerce product page</title>
+
+</head>
+<body>
+  <main>
+    <header>
+      <div class="overlay fade-out"></div>
+      <!-- Navbar panel -->
+      <nav class="flex container container-padd">
+        <div class="header-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <a href="#">
+          <img src="images/logo.svg" alt="logo" />
+        </a>
+        <div class="header-link">
+          <a href="#">Collections</a>
+          <a href="#">Men</a>
+          <a href="#">Women</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="header-user">
+          <a href="#" class="user-cart" data-totalitems="0">
+            <img src="images/icon-cart.svg" alt="cart"/>
+          </a>
+          <a href="#" class="user-avatar">
+            <img src="images/image-avatar.png" alt="avatar"/>
+          </a>
+        </div>
+      </nav>
+      <!-- End of Navbar panel-->
+
+      <!-- Sidebar panel-->
+      <div class="header-menu-link container-padd fade-out">
+        <h2 class="header-menu-close">x</h2>
+        <div class="header-menu-links">
+          <a href="#">Collections</a>
+          <a href="#">Men</a>
+          <a href="#">Women</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <!-- End of Sidebar panel-->
+
+      <!-- Cart section-->
+      <div class="cart-list cart-hide">
+        <div class="cart-title">
+          <h3>Cart</h3>
+        </div>
+        <div class="cart-item">
+          <!-- Default state -->
+          <div class="cart-item-wrapper">
+            <div class="item-details">
+                <p>Your cart is empty</p>
+            </div>
+          </div>
+          <!-- End of Default state -->
+        </div>  
+      </div>
+      <!-- End Cart section-->
+    </header>
+    <!-- Gallery section -->
+    <div class="gallery">
+      <div class="container">
+        <div class="gallery-wrapper">
+          <div class="gallery-img">
+            <!-- Preview thumbnail -->
+            <div class="img-preview">
+              <div class="preview-thumb fade">
+               <img src="images/image-product-1.jpg" alt="product1" /> 
+              </div>
+            
+              <div class="preview-thumb fade">
+                <img src="images/image-product-2.jpg" alt="product2" />
+              </div>
+
+              <div class="preview-thumb fade">
+                <img src="images/image-product-3.jpg" alt="product3" />
+              </div>
+
+              <div class="preview-thumb fade">
+                <img src="images/image-product-4.jpg" alt="product4" />
+              </div>
+            </div>
+            <!-- End of Preview thumbnail --> 
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <!-- Preview thumbnail (small) -->
+            <div class="img-thumbnail">
+              <div>
+                <img class="preview-thumb-s" onclick="currentSlide(1)" src="images/image-product-1-thumbnail.jpg" alt="img-thumbnail-1"/>
+              </div>
+              <div>
+                <img class="preview-thumb-s" onclick="currentSlide(2)" src="images/image-product-2-thumbnail.jpg" alt="img-thumbnail-2"/>
+              </div>
+              <div>
+                <img class="preview-thumb-s" onclick="currentSlide(3)" src="images/image-product-3-thumbnail.jpg" alt="img-thumbnail-3"/>
+              </div>
+              <div>
+                <img class="preview-thumb-s" onclick="currentSlide(4)" src="images/image-product-4-thumbnail.jpg" alt="img-thumbnail-4"/>
+              </div>
+            </div>
+            <!-- End of Preview thumbnail (small)-->
+          </div>
+
+          <div class="gallery-text container-padd">
+            <div class="text-wrapper">
+              <p class="text-company">SNEAKER COMPANY</p>
+              <h2>Fall Limited Edition Sneakers</h2>
+              <p class="text-description">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+              durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+            </div>
+            
+            <div class="gallery-price">
+              <p class="price">$125.00<span class="discount">50%</span></p>
+              <p class="total">$250.00</p>
+            </div>
+
+            <div class="gallery-quantity">
+              <div class="quantity-wrap container-padd">
+                <a class="minus">-</a>
+                <input type=number class="quantity" value="1">
+                <a class="add">+</a>
+              </div>
+              <button id="addToCartBtn" class="button"><img src="images/icon-cart-light.svg" alt="cart"/> Add to cart</button>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Gallery section -->
+    <!-- Lightbox section -->
+    <div id="lightbox"></div>
+      <div id="lightbox-wrap">
+        <span class="lightbox-close" onclick="hide()">&times;</span>
+        <div class="lightbox-content">
+          <div class="lightbox-thumb">
+            <img src="images/image-product-1.jpg" alt="product1" /> 
+            </div>
+          
+            <div class="lightbox-thumb">
+              <img src="images/image-product-2.jpg" alt="product2" />
+            </div>
+
+            <div class="lightbox-thumb">
+              <img src="images/image-product-3.jpg" alt="product3" />
+            </div>
+
+            <div class="lightbox-thumb">
+              <img src="images/image-product-4.jpg" alt="product4" />
+            </div>
+        </div>
+
+        <a class="lightbox-prev" onclick="plusLightbox(-1)">&#10094;</a>
+        <a class="lightbox-next" onclick="plusLightbox(1)">&#10095;</a>
+
+        <div class="lightbox-content-s">
+          <div>
+            <img class="lightbox-thumb-s" onclick="currentLightbox(1)" src="images/image-product-1-thumbnail.jpg" alt="img-thumbnail-1"/>
+          </div>
+          <div>
+            <img class="lightbox-thumb-s" onclick="currentLightbox(2)" src="images/image-product-2-thumbnail.jpg" alt="img-thumbnail-2"/>
+          </div>
+          <div>
+            <img class="lightbox-thumb-s" onclick="currentLightbox(3)" src="images/image-product-3-thumbnail.jpg" alt="img-thumbnail-3"/>
+          </div>
+          <div>
+            <img class="lightbox-thumb-s" onclick="currentLightbox(4)" src="images/image-product-4-thumbnail.jpg" alt="img-thumbnail-4"/>
+          </div>
+        </div>
+      </div>
+    <!-- End of Lightbox section -->
+  </main>
+  <script src="navbar.js"></script>
+  <script src="cart.js"></script>
+  <script src="slides.js"></script>
+  <script src="lightbox.js"></script>
+  <script src="product.js"></script>
+</body>
+</html>
